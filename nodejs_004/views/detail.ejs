@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <table class="bbs_detail">
+      <tr>
+        <th>NO</th>
+        <td><%- BBS.b_id %></td>
+      </tr>
+
+      <tr>
+        <th>작성일자</th>
+        <td><%- BBS.b_date %></td>
+      </tr>
+
+      <tr>
+        <th>작성자</th>
+        <td><%- BBS.b_writer %></td>
+      </tr>
+
+      <tr>
+        <th>제목</th>
+        <td><%- BBS.b_subject %></td>
+      </tr>
+
+      <tr>
+        <th>내용</th>
+        <td><%- BBS.b_text %></td>
+      </tr>
+      <tr>
+        <th>조회수</th>
+        <td><%- BBS.b_count %></td>
+      </tr>
+    </table>
+  </body>
+</html>
