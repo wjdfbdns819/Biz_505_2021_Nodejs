@@ -20,9 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 /**
- * css, js, image 등의 static 구조의 파일을 저장해 두고,
- *  요청에서 제공하는 것
- * router를 직접 거치지 않고, 직접 파일이 전달되는 구조로 만들어진다
+ * css, js, image 등의 static 구조의 파일을
+ * 저장해 두고 요청에서 제공하는 것
+ * router를 직접 거치지 않고 직접 파일이 전달되는
+ * 구조로 만들어 진다
  */
 app.use(express.static(path.join(__dirname, "public")));
 

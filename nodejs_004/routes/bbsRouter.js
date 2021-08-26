@@ -13,16 +13,4 @@ router.post("/write", (req, res) => {
   });
 });
 
-// router.get("/detail", (req, res) => {
-//   res.render("detail");
-// });
-
-router.get("/detail", (req, res) => {
-  let id = req.query.b_id;
-  tbl_bbs.findByPk(id).then((result) => {
-    console.log(result);
-    res.render("detail", { BBS: result });
-  });
-});
-
 module.exports = router;
