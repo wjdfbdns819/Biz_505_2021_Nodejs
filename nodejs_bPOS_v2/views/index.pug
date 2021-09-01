@@ -1,0 +1,50 @@
+extends layout
+
+block content
+	script(src="/js/table.js")
+	style.
+		section.main {
+
+			display:flex;
+			flex-wrap:wrap;
+
+			justify-content:center;
+			align-items:center;
+		}
+
+		div.table {
+			
+			/* table box 위치, 크기 조정 */
+			width: 300px;
+			height: 150px;
+			margin: 50px;
+
+			/* table box 모양 지정 */
+			border-radius: 5px;
+			
+			/* table box 색 지정 */
+			border: 1px solid #487E95;
+			background-color: #487E95;
+
+			/* 줄(글자) 높이 조정하는 속성 */
+			line-height: 150px;
+
+			/* 글씨 위치, 크기, 색 지정 */
+			text-align: center;
+			font-size: 35px;
+
+			color: white;
+			
+			/* 마우스 모양 지정 */
+			cursor : pointer;			
+		}
+
+		/* table box에 마우스가 올라갈때 */
+		div.table:hover {
+
+			/* table box에 그림자 지정 */
+			box-shadow: 2px 2px 2px black;
+		}
+
+	- for(let i = 0 ; i < 12 ; i++)
+		div.table(data-table_id= i+1 ) !{i + 1}번 테이블

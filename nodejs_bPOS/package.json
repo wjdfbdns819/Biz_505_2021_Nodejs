@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-005",
+  "name": "nodejs-bpos",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,6 @@
     "http-errors": "^1.8.0",
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
-    "multer": "^1.4.3",
     "mysql2": "^2.3.0",
     "pug": "^3.0.2",
     "sequelize": "^6.6.5"

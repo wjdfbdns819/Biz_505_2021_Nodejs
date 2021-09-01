@@ -1,0 +1,96 @@
+doctype html
+html
+	head
+		title 우리동네 김밥천국
+		style.
+			* {
+				/* 초기화 */
+				box-sizing : border-box;
+				margin:0;
+				padding:0;
+			}
+
+			body {
+				width:100vw;
+				height:100vh;
+				display:flex;
+				flex-flow:column;
+			}
+
+			/* header, section.main, footer 가 공통으로 지정된 부분들 */
+			header, section.main, footer { 
+				width: 95vw;
+				margin-left: 50px;
+			}
+
+			header {
+				/* header 위치 조정 */
+				padding:1rem;
+				margin-top: 10px;
+
+				/* header box 모양 조정 */
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+
+				/* 배경색 지정 */
+				background-color: #23689B;
+
+				/* 글씨색, 글씨 위치 조정 */			
+				text-align:center;
+			}
+
+			a { 
+				/* a tag 밑줄 제거 설정 */
+				text-decoration: none; 
+			}
+
+			/* main으로 돌아가기 전, 후 link 상태 설정 */
+			a:link, a:visited { 
+
+				/* 글씨 크기 조정*/
+				font-weight: bold;
+				font-size: 40px;
+
+				/* 글씨색, 글씨 위치 조정 */
+				color: white;
+				text-shadow: 2px 2px 2px black;
+				
+			}
+
+			section.main {
+
+				/* main box 위치 조정 */
+				flex: 1;
+				
+				/* main box 색 지정*/
+				border: 1px solid #F4F5DB;
+				background-color: #F4F5DB;
+			}
+
+			footer {
+				
+				/* footer 위치 조정 */
+				padding: 0.5rem;
+				margin-bottom: 10px;
+
+				/* footer 모양 설정 */
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+
+				/* footer 색 지정 */
+				background-color: #23689B;
+				color: white;
+
+				/* 글씨 위치 조정 */
+				text-align: center;				
+			}
+
+	body
+		header
+			a(href="http://localhost:3000/") 김밥천국 2021
+		
+		section.main
+			block content
+
+		footer 	
+			address CopyRight&copy;wjdfbdns@naver.com

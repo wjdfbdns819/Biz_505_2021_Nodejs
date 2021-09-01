@@ -100,11 +100,11 @@ block content
 			if (className.includes("btn_update")) {
 				url += `bbs/update?b_id=#{BBS.b_id}`;
 			} else if (className.includes("btn_delete")) {
-                if(!confirm ("본문을 삭제합니다")) {
-                    return false
-                } 
-                url += `bbs/delete?b_id=#{BBS.b_id}`;
-				
+				if(!confirm ("본문을 삭제합니다")) {
+					return false
+				} 	
+				url += `bbs/delete?b_id=#{BBS.b_id}`;
+
 			}
 			document.location.href = url;
 		});

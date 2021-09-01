@@ -1,0 +1,158 @@
+extends layout
+
+block content
+	script(src="/js/order.js")
+	style.
+		section.main {
+			display:flex;
+			flex-wrap:wrap;
+
+			justify-content:center;
+			align-items:center;
+		}
+		article {
+			border: 1px solid #D9DAB0;
+			margin: 10px;
+			padding: 10px;
+			background-color: #D9DAB0;
+			height:90%;
+		}
+		article.order_list {
+			flex: 3;
+			overflow: auto;
+			border-radius: 3px;
+			
+		}
+
+
+		article.order_list h1{
+			margin-left: 38px;
+			width: 90%;
+			border-radius: 5px;
+			padding: 10px;
+			background-color: #333;
+			color: white;
+			text-align: center; 
+		}
+
+		article.order_list ul {
+			display: flex;
+		}
+
+		article.product_list {
+			flex: 3;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+		article.product_list div.menu {
+			width: 200px;
+			height: 100px;
+			margin: 5px;
+			border: 1px solid #6E7C7C;
+			background-color: #6E7C7C;
+			color: white;
+			font-weight: bold;
+		}
+
+		div.order_list {
+			display: flex;
+			width: 80%;
+			
+			margin: 0 auto;
+
+			
+		}
+
+		div.menu_id, div.menu_name, div.menu_price,
+		div.menu_qty, div.menu_total{
+			font-weight: bold;
+			background-color: white;
+			border-radius: 3px;
+			text-align: center;
+		}
+
+		 div.list_total, div.order_pay_count, div.order_pay_total {
+			font-weight: bold;
+			background-color: white;
+			border-radius: 3px;
+		 } 
+
+		div.order_list div {
+			flex: 1;
+			margin: 5px;
+			padding: 3px;
+			border: 1px solid #333;
+		}
+
+		div.order_list div.menu_delete {
+			flex: 0;
+			cursor: pointer;
+			border: none;
+			font-weight: bold;
+		}
+
+		div.menu_delete:hover {
+			color: red;
+			font-weight: bold;
+			
+		}
+
+	article.order_list(data-table_id= table_id)
+		h1 !{table_id}번 테이블 주문 리스트
+		ul
+			li 상품번호
+			li 상품이름
+			li 가격
+			li 주문수량
+			li 주문가격
+
+	article.product_list
+		each menu_item, index in MENU
+			div.menu(data-menu_id= menu_item.p_code) 
+				h3= menu_item.p_name 
+				p !{menu_item.p_price}원
+				
+	style.
+		div.modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0,0,0,0.5);
+			z-index: 10;
+
+			display: flex;
+			flex-flow: column;
+			display: none;
+		}
+		div.close {
+			text-align: right;
+			color: white;
+			font-size: 30px;
+			padding: 20px;
+		}
+
+		div.close span:hover {
+			border-radius: 50%;
+			background-color: #ddd;
+		}
+
+		div.message {
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			color: yellow;
+		}
+
+	div.modal 
+		div.close
+			span &times;
+		div.message
+			h1 결제금액 :
+				span.pay_total
+			h2 결제종류 :
+				span.pay_qty
+			button.btn_pay_complete 확인
